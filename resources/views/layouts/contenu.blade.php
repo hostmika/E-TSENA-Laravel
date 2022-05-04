@@ -13,17 +13,9 @@
                             <span>CATEGORIES</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            @foreach($categories as $categorie)
+                            <li><a href="#">{{ $categorie->nom }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -108,12 +100,12 @@
                         <h2>Featured Product</h2>
                     </div>
                     <div class="featured__controls">
+                        
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".Yaourt">Yaourt</li>
-                            <li data-filter=".Fruit">Jus</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
+                            @foreach($categories as $categorie)
+                            <li data-filter=".{{ $categorie->nom }}">{{ $categorie->nom }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -121,7 +113,7 @@
             <div class="row featured__filter">
 
                 @foreach($produits as $produit)
-                <div class="col-lg-3 col-md-4 col-sm-6 mix {{ $produit->nom }} {{ $produit->categorie }}">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix {{ $produit->nom }} {{ $produit->categorie->nom }}">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/produit/'.$produit->image) }}">
                             <ul class="featured__item__pic__hover">
@@ -132,6 +124,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">{{ $produit->nom }}</a></h6>
+                            <h5>{{ $produit->categorie->nom }}</h5>
                             <h5>{{ number_format($produit->prix,2) }} Ar</h5>
                         </div>
                     </div>

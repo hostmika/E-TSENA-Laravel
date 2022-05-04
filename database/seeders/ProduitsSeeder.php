@@ -16,7 +16,7 @@ class ProduitsSeeder extends Seeder
     {
         $produit = new Produit();
         $produit->nom = "Yaourt iti";
-        $produit->categorie = 1;
+        $produit->categories_id = 1;
         $produit->prix =1000;
         $produit->description = "Yaourt be creme";
         $produit->poids = "50 mg";
@@ -24,12 +24,12 @@ class ProduitsSeeder extends Seeder
         $produit->save();
 
         $produit = new Produit();
-        $produit->nom = "Fruits";
-        $produit->categorie = 2;
+        $produit->nom = "Le Fruit";
+        $produit->categories_id = 2;
         $produit->prix =2500;
         $produit->description = "Un jus concentre";
         $produit->poids = "250 mg";
-        $produit->image = "fruits.jpg";
+        $produit->image = "jus.jpg";
         $produit->save();
     }
 }
