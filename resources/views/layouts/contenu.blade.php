@@ -10,7 +10,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>CATEGORIES</span>
                         </div>
                         <ul>
                             <li><a href="#">Fresh Meat</a></li>
@@ -132,7 +132,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">{{ $produit->nom }}</a></h6>
-                            <h5>{{ $produit->prix }} Ar</h5>
+                            <h5>{{ number_format($produit->prix,2) }} Ar</h5>
                         </div>
                     </div>
                 </div>
