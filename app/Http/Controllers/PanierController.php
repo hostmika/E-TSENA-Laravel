@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Produit;
 use App\Models\Categorie;
 
-class HomeController extends Controller
+class PanierController extends Controller
 {
-    public function getData() {
-
+   public function getData() {
+     
         $produits = Produit::all();
         $categories = Categorie::all();
-        return view('pages.acceuil',compact('produits','categories'));
+        return view('pages.panier',compact('produits','categories'));
     }
 }

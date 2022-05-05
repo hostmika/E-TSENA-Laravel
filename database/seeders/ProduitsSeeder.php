@@ -31,5 +31,14 @@ class ProduitsSeeder extends Seeder
         $produit->poids = "250 mg";
         $produit->image = "jus.jpg";
         $produit->save();
+
+        $produit = new Produit();
+        $produit->nom = "Cremerie";
+        $produit->categories_id = 3;
+        $produit->prix =2500;
+        $produit->description = "Un jus concentre";
+        $produit->poids = "250 mg";
+        $produit->image = "jus.jpg";
+        $produit->save();
     }
 }
