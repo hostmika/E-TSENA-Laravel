@@ -10,8 +10,8 @@ class Categorie extends Model
 {
     use HasFactory;
 
-    public function produit()
+    public function produits()
     {
-        return $this->hasMany(Produit::class);
+        return $this->hasMany(Produit::class,'categories_id');
     }
 }
