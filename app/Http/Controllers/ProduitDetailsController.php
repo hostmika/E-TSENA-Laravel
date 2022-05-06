@@ -8,7 +8,7 @@ use App\Models\Categorie;
 
 class ProduitDetailsController extends Controller
 {
-    public function getData() {
+    public function allProduits() {
 
         $produits = Produit::all();
         $categories = Categorie::all();

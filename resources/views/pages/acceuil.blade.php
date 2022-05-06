@@ -50,7 +50,7 @@
             </div>
             <div class="row featured__filter">
 
-                @foreach($produits as $produit)
+                @foreach($produits->take(8) as $produit)
                 <div class="col-lg-3 col-md-4 col-sm-6 mix {{ $produit->categorie->nom }}">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/produit/'.$produit->image) }}">
