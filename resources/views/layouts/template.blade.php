@@ -58,11 +58,11 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="/">Acceuil</a></li>
-                <li><a href="shop">Shop</a></li>
-                <li><a href="panier">Panier</a></li>
-                <li><a href="blog">Blog</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
+                <li class="@if(Route::is('shop')) active @endif"><a href="shop">Shop</a></li>
+                <li class="@if(Route::is('panier')) active @endif"><a href="panier">Panier</a></li>
+                <li class="@if(Route::is('blog')) active @endif"><a href="blog">Blog</a></li>
+                <li class="@if(Route::is('contact')) active @endif"><a href="contact">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -124,18 +124,17 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="/">Acceuil</a></li>
-                            <li><a href="shop">Shop</a></li>
-                            <li><a href="panier">Panier</a></li>
-                            <li><a href="blog">Blog</a></li>
-                            <li><a href="contact">Contact</a></li>
+                            <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
+                            <li class="@if(Route::is('shop')) active @endif"><a href="shop">Shop</a></li>
+                            <li class="@if(Route::is('panier')) active @endif"><a href="panier">Panier</a></li>
+                            <li class="@if(Route::is('blog')) active @endif"><a href="blog">Blog</a></li>
+                            <li class="@if(Route::is('contact')) active @endif"><a href="contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
@@ -150,7 +149,7 @@
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero hero-normal">
+    <section class="hero @if(! Route::is('acceuil')) hero-normal @endif">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -161,7 +160,7 @@
                         </div>
                         <ul>
                             @foreach($categories as $categorie)
-                            <li><a href="#">{{ $categorie->nom }}</a></li>
+                            <li><a href="{{route('byCategorie',['id'=>$categorie->id]) }}">{{ $categorie->nom }}</a></li>
                             @endforeach
                         </ul>
                     </div>

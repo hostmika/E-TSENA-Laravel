@@ -12,6 +12,7 @@ class HomeController extends Controller
 
         $produits = Produit::all();
         $categories = Categorie::all();
+        
         return view('pages.acceuil',compact('produits','categories'));
     }
 }

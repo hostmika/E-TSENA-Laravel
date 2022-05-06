@@ -5,8 +5,8 @@
         <div class="hero__text">
             <span>LEGIOMA</span>
             <h2>TSARA<br />100% natoraly</h2>
-            <p>Free Pickup and Delivery Available</p>
-            <a href="#" class="primary-btn">SHOP NOW</a>
+            <p>Profitez de la livraison gratuite</p>
+            <a href="#" class="primary-btn">ACHETER</a>
         </div>
     </div>
 @endsection
@@ -60,8 +60,10 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{ $produit->nom }}</a></h6>
-                            <h5>{{ $produit->categorie->nom }}</h5>
+                            <h6><a href="#">{{ $produit->categorie->nom }}</a></h6>
+                            <div class="hero__text">
+                                <span>{{ $produit->nom }}</span>
+                            </div>
                             <h5>{{ number_format($produit->prix,2) }} Ar</h5>
                         </div>
                     </div>
