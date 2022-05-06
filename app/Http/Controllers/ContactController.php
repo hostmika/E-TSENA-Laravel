@@ -8,7 +8,7 @@ use App\Models\Categorie;
 
 class ContactController extends Controller
 {
-    public function getData() {
+    public function allProduits() {
 
         $produits = Produit::all();
         $categories = Categorie::all();

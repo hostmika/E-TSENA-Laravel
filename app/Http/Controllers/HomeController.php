@@ -8,11 +8,9 @@ use App\Models\Categorie;
 
 class HomeController extends Controller
 {
-    public function getData() {
+    public function allProduits() {
 
         $produits = Produit::all();
-        $categories = Categorie::all();
-        
-        return view('pages.acceuil',compact('produits','categories'));
+        return view('pages.acceuil',compact('produits'));
     }
 }

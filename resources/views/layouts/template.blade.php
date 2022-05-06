@@ -33,7 +33,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="img/logo.png" alt=""></a>
+            <a href="#"><img src="{{ asset('img/logo.png') }}" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
@@ -44,7 +44,7 @@
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
-                <img src="img/language.png" alt="">
+                <img src="{{ asset('img/language.png') }}" alt="">
                 <div>English</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
@@ -59,10 +59,10 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
-                <li class="@if(Route::is('shop')) active @endif"><a href="shop">Shop</a></li>
-                <li class="@if(Route::is('panier')) active @endif"><a href="panier">Panier</a></li>
-                <li class="@if(Route::is('blog')) active @endif"><a href="blog">Blog</a></li>
-                <li class="@if(Route::is('contact')) active @endif"><a href="contact">Contact</a></li>
+                <li class="@if(Route::is('shop')) active @endif"><a href="/shop">Shop</a></li>
+                <li class="@if(Route::is('panier')) active @endif"><a href="/panier">Panier</a></li>
+                <li class="@if(Route::is('blog')) active @endif"><a href="/blog">Blog</a></li>
+                <li class="@if(Route::is('contact')) active @endif"><a href="/contact">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -103,7 +103,7 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
+                                <img src="{{ asset('img/language.png') }}" alt="">
                                 <div>Mika</div>  
                             </div>
                             <div class="header__top__right__auth">
@@ -118,17 +118,17 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="{{ asset('img/logo.png') }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
                             <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
-                            <li class="@if(Route::is('shop')) active @endif"><a href="shop">Shop</a></li>
-                            <li class="@if(Route::is('panier')) active @endif"><a href="panier">Panier</a></li>
-                            <li class="@if(Route::is('blog')) active @endif"><a href="blog">Blog</a></li>
-                            <li class="@if(Route::is('contact')) active @endif"><a href="contact">Contact</a></li>
+                            <li class="@if(Route::is('shop')) active @endif"><a href="/shop">Shop</a></li>
+                            <li class="@if(Route::is('panier')) active @endif"><a href="/panier">Panier</a></li>
+                            <li class="@if(Route::is('blog')) active @endif"><a href="/blog">Blog</a></li>
+                            <li class="@if(Route::is('contact')) active @endif"><a href="/contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -160,7 +160,7 @@
                         </div>
                         <ul>
                             @foreach($categories as $categorie)
-                            <li><a href="{{route('byCategorie',['id'=>$categorie->id]) }}">{{ $categorie->nom }}</a></li>
+                            <li><a href="{{route('categorie',['id'=>$categorie->id]) }}">{{ $categorie->nom }}</a></li>
                             @endforeach
                         </ul>
                     </div>
