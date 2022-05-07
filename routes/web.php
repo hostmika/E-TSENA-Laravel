@@ -18,6 +18,6 @@ Route::get('/shop',"App\Http\Controllers\ShopController@allProduits")->name('sho
 Route::get('panier',"App\Http\Controllers\PanierController@allProduits")->name('panier');
 Route::get('blog',"App\Http\Controllers\BlogController@allProduits")->name('blog');
 Route::get('/contact',"App\Http\Controllers\ContactController@allProduits")->name('contact');
-Route::get('/produitDetails',"App\Http\Controllers\ProduitDetailsController@details");
+Route::get('/produitDetails/{id}',"App\Http\Controllers\ProduitDetailsController@details")->name('produitDetails');
 Route::get('/blogDetails',"App\Http\Controllers\BlogDetailsController@allProduits");
 Route::get('/categorie/{id}',"App\Http\Controllers\CategorieController@byCategorie")->name('categorie');
