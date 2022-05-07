@@ -21,3 +21,4 @@ Route::get('/contact',"App\Http\Controllers\ContactController@allProduits")->nam
 Route::get('/produitDetails/{id}',"App\Http\Controllers\ProduitDetailsController@details")->name('produitDetails');
 Route::get('/blogDetails',"App\Http\Controllers\BlogDetailsController@allProduits");
 Route::get('/categorie/{id}',"App\Http\Controllers\CategorieController@byCategorie")->name('categorie');
+Route::get('/recherche',"App\Http\Controllers\ProduitController@recherche")->name('recherche');
