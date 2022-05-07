@@ -168,13 +168,12 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
+                            <form action="/recherche">
                                 <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
+                                       Tous les catégories
                                 </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <input type="text" name="query"placeholder="Inona no tianao jerena ?">
+                                <button type="submit" class="site-btn">RECHERCHE</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">

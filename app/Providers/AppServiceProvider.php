@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Paginator::useBootstrap();
-        view::composer(['pages.shop','pages.acceuil','pages.categorie','pages.produitDetails'], ContenuComposer::class); 
+        view::composer(['pages.shop','pages.acceuil','pages.categorie','pages.produitDetails','pages.recherche'], ContenuComposer::class); 
 
         /**
          * Paginate a standard Laravel Collection.
