@@ -188,13 +188,13 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="{{ asset('img/produit/'.$produit->image) }}">
                             <ul class="product__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-info-circle"></i></a></li>
+                                <li><a href="{{route('produitDetails',['id'=>$produit->id]) }}"><i class="fa fa-info-circle"></i></a></li>
                                 
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6><a href="#">{{ $produit->categorie->nom }}</a></h6>
+                            <h6><a href="">{{ $produit->categorie->nom }}</a></h6>
                             <div class="hero__text">
                                 <span>{{ $produit->nom }}</span>
                             </div>
