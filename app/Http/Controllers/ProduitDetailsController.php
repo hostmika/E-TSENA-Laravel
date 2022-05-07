@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produit;
-use App\Models\Categorie;
 
 class ProduitDetailsController extends Controller
 {
-    public function allProduits() {
+    public function details(Request $request) {
 
-        $produits = Produit::all();
-        $categories = Categorie::all();
-        return view('pages.produitDetails',compact('produits','categories'));
+        $produit = Produit::find($request->id);
+        return view('pages.produitDetails',compact('produit'));
     }
 }
