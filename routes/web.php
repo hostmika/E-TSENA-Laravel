@@ -22,3 +22,5 @@ Route::get('/produitDetails/{id}',"App\Http\Controllers\ProduitDetailsController
 Route::get('/blogDetails',"App\Http\Controllers\BlogDetailsController@allProduits");
 Route::get('/categorie/{id}',"App\Http\Controllers\CategorieController@byCategorie")->name('categorie');
 Route::get('/recherche',"App\Http\Controllers\ProduitController@recherche")->name('recherche');
+Route::post('/panier/ajout/{id}',"App\Http\Controllers\PanierController@ajouterPanier")->name('ajouterPanier');
+Route::get('/panier/supprimer/{id}',"App\Http\Controllers\PanierController@supprimerPanier")->name('supprimerPanier');
