@@ -46,18 +46,22 @@
                                     <td class="shoping__cart__price">
                                         {{ $panier->prix }}
                                     </td>
+
+                                    <form action="{{ route('modifierPanier', ['id'=>$panier->id]) }}" method="POST">
+                                    @csrf
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="{{ $panier->quantite }}">
+                                                <input type="text" name="quantite"onchange="this.form.submit()" value="{{ $panier->quantite }}">
                                             </div>
-
+                                            <button type="submit"><i class="fa fa-refresh"></i></button>
                                         </div>
-                                       <h4><a href=""><i class="fa fa-undo" ></i></a></h4>
+                                       
                                     </td>
+                                    </form>
 
                                     <td class="shoping__cart__total">
-                                       {{ number_format($panier->prix * $panier->quantite) }} 
+                                       {{ number_format($panier->prix * $panier->quantite,2) }} 
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <a href="{{route('supprimerPanier',['id'=>$panier->id]) }}"><span class="icon_close"></span></a>
@@ -75,9 +79,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
-                        <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+
                         <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                            Upadate Cart</a>
+                            Continuer shop</a>
                     </div>
                 </div>
                 <div class="col-lg-6">

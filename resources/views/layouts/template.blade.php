@@ -52,9 +52,15 @@
                     <li><a href="#">English</a></li>
                 </ul>
             </div>
+            @if(Session::has('utilisateur'))
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="/login"><i class="fa fa-user"></i>Deconnexion</a>
             </div>
+            @else
+            <div class="header__top__right__auth">
+                <a href="/login"><i class="fa fa-user"></i>Connexion</a>
+            </div>
+            @endif
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
@@ -106,9 +112,15 @@
                                 <img src="{{ asset('img/language.png') }}" alt="">
                                 <div>Mika</div>  
                             </div>
+                            @if(Session::has('utilisateur'))
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="/deconnexion"><i class="fa fa-user"></i>Deconnexion</a>
                             </div>
+                            @else
+                            <div class="header__top__right__auth">
+                                <a href="/login"><i class="fa fa-user"></i>Connexion</a>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
