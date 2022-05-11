@@ -24,3 +24,7 @@ Route::get('/categorie/{id}',"App\Http\Controllers\CategorieController@byCategor
 Route::get('/recherche',"App\Http\Controllers\ProduitController@recherche")->name('recherche');
 Route::post('/panier/ajout/{id}',"App\Http\Controllers\PanierController@ajouterPanier")->name('ajouterPanier');
 Route::get('/panier/supprimer/{id}',"App\Http\Controllers\PanierController@supprimerPanier")->name('supprimerPanier');
+Route::post('/panier/modifier/{id}',"App\Http\Controllers\PanierController@modifierPanier")->name('modifierPanier');
+Route::get('/login',"App\Http\Controllers\UtilisateurController@login")->name('login');
+Route::post('/connexion',"App\Http\Controllers\UtilisateurController@connexion")->name('connexion');
+Route::get('/deconnexion',"App\Http\Controllers\UtilisateurController@deconnexion")->name('deconnexion');

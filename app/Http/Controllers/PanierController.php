@@ -28,6 +28,14 @@ class PanierController extends Controller
         return view('pages.panier',compact('paniers'));
     }
 
+    public function modifierPanier(Request $request) {
+
+        $panier = Panier::find($request->id);
+        $panier->quantite = $request->quantite;
+        $panier->save();
+        return redirect(route('panier'));
+    }
+
 
     public function supprimerPanier(Request $request) {
 
