@@ -4,10 +4,14 @@
             <div class="row">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div class="col-lg-3 col-md-6 col-sm-6">
 =======
                 <div class="d-flex justify-content-center">
 >>>>>>> 2057928 (mise en place du prix total dans panier)
+=======
+                <div class="col-lg-3 col-md-6 col-sm-6">
+>>>>>>> f7debba (configuration de cache)
 =======
                 <div class="col-lg-3 col-md-6 col-sm-6">
 >>>>>>> f7debba (configuration de cache)
@@ -68,6 +72,7 @@
                     <div class="footer__copyright">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                           Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">RAKOTONDRAIBE Michael</a>
                           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
@@ -75,6 +80,9 @@
                         <div class="footer__copyright__payment"><img src="{{asset('img/payment-item.png')}}" alt=""></div>
 =======
                         <div class="footer__copyright__text"><p>
+=======
+                        <div class="d-flex justify-content-center" ><p>
+>>>>>>> f7debba (configuration de cache)
 =======
                         <div class="d-flex justify-content-center" ><p>
 >>>>>>> f7debba (configuration de cache)
