@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
+@section('title','Blog | '.config('app.name'))
+
 @section('content')
 
 	<!-- Breadcrumb Section Begin -->
@@ -10,7 +12,7 @@
                     <div class="breadcrumb__text">
                         <h2>Blog</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
+                            <a href="/">{{ config('app.name') }}</a>
                             <span>Blog</span>
                         </div>
                     </div>

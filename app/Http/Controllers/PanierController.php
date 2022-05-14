@@ -71,6 +71,24 @@ class PanierController extends Controller
         return redirect(route('panier'));
     }
 
+    public function ajouter(Request $request) {
+     
+        $idUtilisateur = $request->session()->get('utilisateur')['id'];
+        $produit = Produit::find($request->id);
+
+        Cart::session($idUtilisateur)->add([
+            'id' => $produit->id,
+            'name' => $produit->nom,
+            'price' => $produit->prix,
+            'quantity' => 1,
+            'attributes' => array(
+                'image' => $produit->image,
+            )
+        ]);
+
+        return redirect(route('panier'));
+    }
+
     /*public function modifierPanier(Request $request) {
 
         $panier = Panier::find($request->id);
@@ -114,12 +132,12 @@ class PanierController extends Controller
         return redirect(route('panier'));
     }
 
-    public function supprimerAllPanier()
+    public function supprimerTout()
     {
-        $idUtilisateur = $request->session()->get('utilisateur')['id'];
+        $idUtilisateur = session()->get('utilisateur')['id'];
         Cart::session($idUtilisateur)->clear();
 
-        session()->flash('success', 'All Item Cart Clear Successfully !');
+        session()->flash('supprimerTout', 'Tous les produits sont supprimés !');
 
         return redirect(route('panier'));
     }

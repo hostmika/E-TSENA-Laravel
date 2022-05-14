@@ -1,12 +1,14 @@
 @extends('layouts.template')
 
+@section('title','Accueil | '.config('app.name'))
+
 @section('banner')
     <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
         <div class="hero__text">
             <span>LEGIOMA</span>
             <h2>TSARA<br />100% natoraly</h2>
             <p>Profitez de la livraison gratuite</p>
-            <a href="#" class="primary-btn">ACHETER</a>
+            <a href="/shop" class="primary-btn">ACHETER</a>
         </div>
     </div>
 @endsection
@@ -20,7 +22,7 @@
                     @foreach($categories as $categorie)
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
-                            <h5><a href="#">{{ $categorie->nom }}</a></h5>
+                            <h5><a href="{{route('categorie',['id'=>$categorie->id]) }}">{{ $categorie->nom }}</a></h5>
                         </div>
                     </div>
                     @endforeach
@@ -36,12 +38,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Featured Product</h2>
+                        <h2>Meilleurs Produits</h2>
                     </div>
                     <div class="featured__controls"> 
                         <ul>
                             <li class="active" data-filter="*">Tout</li>
-                            @foreach($categories->take(4) as $categorie)
+                            @foreach($categories->take(3) as $categorie)
                             <li data-filter=".{{ $categorie->nom }}">{{ $categorie->nom }}</li>
                             @endforeach
                         </ul>
@@ -55,8 +57,8 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/produit/'.$produit->image) }}">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="produitDetails"><i class="fa fa-info-circle"></i></a></li>                              
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="{{route('produitDetails',['id'=>$produit->id]) }}"><i class="fa fa-info-circle"></i></a></li>                              
+                                <li><a href="{{ route('ajouter',['id'=>$produit->id]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="product__discount__item__text">

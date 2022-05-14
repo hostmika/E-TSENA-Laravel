@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
+@section('title','Shop | '.config('app.name'))
+
 @section('content')
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="{{ asset('img/breadcrumb.jpg') }}">
@@ -7,9 +9,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Organi Shop</h2>
+                        <h2>Shop</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
+                            <a href="/">{{ config('app.name') }}</a>
                             <span>Shop</span>
                         </div>
                     </div>

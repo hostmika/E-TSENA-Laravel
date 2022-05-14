@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>e-tsena | Home</title>
+    <title>@yield('title')</title>
 
     <!-- Google Font -->
     <link href="{{asset('css/fonts.css')}}" rel="stylesheet">
@@ -47,7 +47,7 @@
         @else
         <div class="humberger__menu__cart">
             <ul>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                <li><a href="/panier"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
             </ul>
             <div class="header__cart__price">Total: <span>0 Ar</span>
             </div>
@@ -87,10 +87,8 @@
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            <a href="https://www.facebook.com/mika.tankim/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/shelby.rk/"><i class="fa fa-instagram"></i></a>
         </div>
         <div class="humberger__menu__contact">
             <ul>
@@ -116,8 +114,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/mika.tankim/"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/shelby.rk/"><i class="fa fa-instagram"></i></a>
                             </div>
                             <div class="header__top__right__language">
                                 <img src="{{ asset('img/language.png') }}" alt="">
@@ -148,7 +146,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="{{ asset('img/logo.png') }}" alt=""></a>
+                        <a href="/"><img src="{{ asset('img/logo.png') }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -166,7 +164,7 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
+                            <li><a href="/panier"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
                         </ul>
                         <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span></div>
                     </div>
@@ -175,7 +173,7 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                            <li><a href="/panier"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
                         </ul>
                         <div class="header__cart__price">Total: <span>0 Ar</span></div>
                     </div>

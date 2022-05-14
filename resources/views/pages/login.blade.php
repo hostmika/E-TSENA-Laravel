@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
+@section('title','Connexion | '.config('app.name'))
+
 @section('content')
 
 <<<<<<< HEAD

@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
+@section('title','Inscription | '.config('app.name'))
+
 @section('content')
 
 
