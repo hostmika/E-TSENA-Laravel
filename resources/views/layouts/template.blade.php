@@ -36,12 +36,23 @@
         <div class="humberger__menu__logo">
             <a href="#"><img src="{{ asset('img/logo.png') }}" alt=""></a>
         </div>
+        @if(Session::has('utilisateur'))
         <div class="humberger__menu__cart">
             <ul>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>4</span></a></li>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span>
+            </div>
         </div>
+        @else
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+            </ul>
+            <div class="header__cart__price">Total: <span>0 Ar</span>
+            </div>
+        </div>
+        @endif
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
                 <img src="{{ asset('img/language.png') }}" alt="">
@@ -80,7 +91,7 @@
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li><i class="fa fa-envelope"></i> mika.rakotondraibe@gmail.com</li>
                 <li>Free Shipping for all Order of $99</li>
             </ul>
         </div>
@@ -95,8 +106,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
+                                <li><i class="fa fa-envelope"></i>mika.rakotondraibe@gmail.com</li>
                             </ul>
                         </div>
                     </div>
@@ -104,13 +114,11 @@
                         <div class="header__top__right">
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
                             <div class="header__top__right__language">
                                 <img src="{{ asset('img/language.png') }}" alt="">
-                                <div>Mika</div>  
+                                <div>Michael</div>  
                             </div>
                             @if(Session::has('utilisateur'))
                             <div class="header__top__right__auth">
@@ -144,14 +152,25 @@
                         </ul>
                     </nav>
                 </div>
+                @if(Session::has('utilisateur'))
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>4</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span></div>
                     </div>
                 </div>
+                @else
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">Total: <span>0 Ar</span></div>
+                    </div>
+                </div>
+                @endif
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
@@ -193,8 +212,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>0349852916</h5>
+                                <span>Disponible</span>
                             </div>
                         </div>
                     </div>
@@ -207,7 +226,7 @@
 
     @yield('content')
 
-    @include('layouts.partials.footer')
+    @include('layouts.footer')
 
     <!-- Js Plugins -->
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>

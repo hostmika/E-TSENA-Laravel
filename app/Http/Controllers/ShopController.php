@@ -8,7 +8,6 @@ use App\Models\Produit;
 class ShopController extends Controller
 {
     
-
     public function allProduits() {
 
         $produits = Produit::paginate(8);

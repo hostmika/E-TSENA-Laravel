@@ -7,6 +7,12 @@ use App\Models\Produit;
 
 class ProduitController extends Controller
 {
+    public function allProduits() {
+
+        $produits = Produit::paginate(8);
+        return view('pages.shop',compact('produits'));
+    } 
+
     public function recherche(Request $request) {
       
         $produits = Produit::where('nom','like','%'.$request->input('query').'%')->get();

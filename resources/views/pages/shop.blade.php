@@ -165,11 +165,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="filter__found">
-                                    <h6><span>{{ count($produits) }}</span> Products found</h6>
-                                </div>
-                            </div>
+                            
                             <div class="col-lg-4 col-md-3">
                                 <div class="filter__option">
                                     <span class="icon_grid-2x2"></span>

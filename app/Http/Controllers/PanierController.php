@@ -5,10 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produit;
 use App\Models\Panier;
+use Cart;
 
 class PanierController extends Controller
 {
-   public function ajouterPanier(Request $request) {
+
+    /*public function allProduits(Request $request) {
+
+        $paniers = Panier::where(['users_id'=>$request->session()->get('utilisateur')['id']])->get();
+        
+        return view('pages.panier',compact('paniers'));
+    }*/
+
+    public function allProduits() {
+
+        if(session()->has('utilisateur')){
+            $idUtilisateur = session()->get('utilisateur')['id'];
+            $paniers = Cart::session($idUtilisateur )->getContent();
+            
+            return view('pages.panier',compact('paniers'));
+        }
+        else{
+            $message = "Votre panier est vide";
+            return view('pages.panier',compact('message'));  
+        }
+        
+    }
+
+    /*public function ajouterPanier(Request $request) {
      
         $produit = Produit::find($request->id);
         $panier = new Panier();
@@ -21,27 +45,78 @@ class PanierController extends Controller
         $panier->save();
 
         return redirect(route('panier'));
+    }*/
+
+    public function ajouterPanier(Request $request) {
+     
+        $idUtilisateur = $request->session()->get('utilisateur')['id'];
+        $produit = Produit::find($request->id);
+
+        Cart::session($idUtilisateur)->add([
+            'id' => $produit->id,
+            'name' => $produit->nom,
+            'price' => $produit->prix,
+            'quantity' => $request->quantite,
+            'attributes' => array(
+                'image' => $produit->image,
+            )
+        ]);
+
+        session()->flash('success', 'Product is Added to Cart Successfully !');
+
+        return redirect(route('panier'));
     }
 
-    public function allProduits(Request $request) {
-
-        $paniers = Panier::where(['users_id'=>$request->session()->get('utilisateur')['id']])->get();
-        
-        return view('pages.panier',compact('paniers'));
-    }
-
-    public function modifierPanier(Request $request) {
+    /*public function modifierPanier(Request $request) {
 
         $panier = Panier::find($request->id);
         $panier->quantite = $request->quantite;
         $panier->save();
         return redirect(route('panier'));
+    }*/
+
+    public function modifierPanier(Request $request) {
+
+        $idUtilisateur = $request->session()->get('utilisateur')['id'];
+        
+        Cart::session($idUtilisateur)->update(
+            $request->id,
+            [
+                'quantity' => [
+                    'relative' => false,
+                    'value' => $request->quantite
+                ],
+            ]
+        );
+
+        session()->flash('success', 'Item Cart is Updated Successfully !');
+
+        return redirect(route('panier'));
     }
 
+    /*public function supprimerPanier(Request $request) {
+
+        Panier::destroy($request->id);
+        return redirect(route('panier'));
+    }*/
 
     public function supprimerPanier(Request $request) {
 
-        Panier::destroy($request->id);
+        $idUtilisateur = $request->session()->get('utilisateur')['id'];
+        Cart::session($idUtilisateur)->remove($request->id);
+
+        session()->flash('success', 'Item Cart Remove Successfully !');
+
+        return redirect(route('panier'));
+    }
+
+    public function supprimerAllPanier()
+    {
+        $idUtilisateur = $request->session()->get('utilisateur')['id'];
+        Cart::session($idUtilisateur)->clear();
+
+        session()->flash('success', 'All Item Cart Clear Successfully !');
+
         return redirect(route('panier'));
     }
 }
