@@ -13,6 +13,7 @@ class PanierController extends Controller
         $produit = Produit::find($request->id);
         $panier = new Panier();
         $panier->produits_id = $produit->id;
+        $panier->users_id = $request->session()->get('utilisateur')['id'];
         $panier->nom = $produit->nom;
         $panier->prix =$produit->prix;
         $panier->quantite = $request->quantite;
@@ -22,9 +23,10 @@ class PanierController extends Controller
         return redirect(route('panier'));
     }
 
-    public function allProduits() {
+    public function allProduits(Request $request) {
 
-        $paniers = Panier::all();
+        $paniers = Panier::where(['users_id'=>$request->session()->get('utilisateur')['id']])->get();
+        
         return view('pages.panier',compact('paniers'));
     }
 

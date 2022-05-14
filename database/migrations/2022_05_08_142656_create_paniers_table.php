@@ -16,6 +16,7 @@ class CreatePaniersTable extends Migration
         Schema::create('paniers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('produits_id');
+            $table->unsignedBigInteger('users_id');
             $table->string('nom');
             $table->float('prix');
             $table->integer('quantite');
@@ -23,6 +24,7 @@ class CreatePaniersTable extends Migration
             $table->timestamps();
 
             $table->foreign('produits_id')->references('id')->on('produits')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
 
             Schema::enableForeignKeyConstraints();
         });

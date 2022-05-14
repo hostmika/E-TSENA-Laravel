@@ -14,6 +14,7 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/login.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/elegant-icons.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}" type="text/css">
@@ -37,8 +38,7 @@
         </div>
         <div class="humberger__menu__cart">
             <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>4</span></a></li>
             </ul>
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
@@ -147,7 +147,7 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>4</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>

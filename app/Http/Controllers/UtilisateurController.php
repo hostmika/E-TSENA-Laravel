@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class UtilisateurController extends Controller
 {
@@ -18,7 +18,9 @@ class UtilisateurController extends Controller
 
         $utilisateur = User::where(['email'=>$request->email])->first();
         if(!$utilisateur || !Hash::check($request->password,$utilisateur->password)){
-            return "incorrect";
+            Session::flash('erreur','votre email ou mot de passe est incorrect');
+            //dd(session()->get('erreur'));
+            return redirect('/login');
         }
         else{
            $request->session()->put('utilisateur',$utilisateur);
