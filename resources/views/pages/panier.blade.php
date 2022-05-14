@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('content')
-	<!-- Breadcrumb Section Begin -->
+    <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
             <div class="row">
@@ -104,7 +104,11 @@
     <br>
     <div class="d-flex justify-content-center">
         <div class="alert alert-warning" role="alert">
+<<<<<<< HEAD
             <h2> {{ $message }} </h2>
+=======
+            {{ $message }} 
+>>>>>>> 2057928 (mise en place du prix total dans panier)
         </div>
     </div>
     @endif

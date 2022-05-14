@@ -26,5 +26,7 @@ Route::post('/panier/ajout/{id}',"App\Http\Controllers\PanierController@ajouterP
 Route::get('/panier/supprimer/{id}',"App\Http\Controllers\PanierController@supprimerPanier")->name('supprimerPanier');
 Route::post('/panier/modifier/{id}',"App\Http\Controllers\PanierController@modifierPanier")->name('modifierPanier');
 Route::get('/login',"App\Http\Controllers\UtilisateurController@login")->name('login');
+Route::get('/inscription',"App\Http\Controllers\UtilisateurController@inscription")->name('inscription');
+Route::post('/inscrire',"App\Http\Controllers\UtilisateurController@inscrire")->name('inscrire');
 Route::post('/connexion',"App\Http\Controllers\UtilisateurController@connexion")->name('connexion');
 Route::get('/deconnexion',"App\Http\Controllers\UtilisateurController@deconnexion")->name('deconnexion');

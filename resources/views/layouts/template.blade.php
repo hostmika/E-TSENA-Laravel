@@ -71,6 +71,9 @@
             <div class="header__top__right__auth">
                 <a href="/login"><i class="fa fa-user"></i>Connexion</a>
             </div>
+            <div class="header__top__right__auth">
+                <a href="/inscription"><i class="fa fa-user"></i>Inscription</a>
+            </div>
             @endif
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -118,7 +121,11 @@
                             </div>
                             <div class="header__top__right__language">
                                 <img src="{{ asset('img/language.png') }}" alt="">
+<<<<<<< HEAD
                                 <div>Michael</div>  
+=======
+                                <div>Malagasy</div>  
+>>>>>>> 2057928 (mise en place du prix total dans panier)
                             </div>
                             @if(Session::has('utilisateur'))
                             <div class="header__top__right__auth">
@@ -126,7 +133,10 @@
                             </div>
                             @else
                             <div class="header__top__right__auth">
-                                <a href="/login"><i class="fa fa-user"></i>Connexion</a>
+                                <a href="/login"><i class="fa fa-user"></i>Connexion |</a>
+                            </div>
+                            <div class="header__top__right__auth">
+                                <a href="/inscription">Inscription</a>
                             </div>
                             @endif
                         </div>

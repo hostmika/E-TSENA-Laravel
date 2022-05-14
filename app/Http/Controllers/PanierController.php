@@ -26,7 +26,11 @@ class PanierController extends Controller
             return view('pages.panier',compact('paniers'));
         }
         else{
+<<<<<<< HEAD
             $message = "Votre panier est vide";
+=======
+            $message = "Vous devez se connecter !";
+>>>>>>> 2057928 (mise en place du prix total dans panier)
             return view('pages.panier',compact('message'));  
         }
         
