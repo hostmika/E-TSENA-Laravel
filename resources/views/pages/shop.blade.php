@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
+@section('title','Shop | '.config('app.name'))
+
 @section('content')
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="{{ asset('img/breadcrumb.jpg') }}">
@@ -7,9 +9,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Organi Shop</h2>
+                        <h2>Shop</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
+                            <a href="/">{{ config('app.name') }}</a>
                             <span>Shop</span>
                         </div>
                     </div>
@@ -29,10 +31,17 @@
                             <h4>CATEGORIES</h4>
                             <ul>
                                 @foreach($categories as $categorie)
+<<<<<<< HEAD
                                 <li><a href="{{route('categorie',['id'=>$categorie->id]) }}">{{ $categorie->nom }}</a></li>
                                 @endforeach
                             </ul>
                         </div>                       
+=======
+                                <li><a href="#">{{ $categorie->nom }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+>>>>>>> dev
                         
                     </div>
                 </div>
@@ -53,12 +62,20 @@
                                             </div>
                                             <ul class="product__item__pic__hover">
                                                 <li><a href="{{route('produitDetails',['id'=>$produit->id]) }}"><i class="fa fa-info-circle"></i></a></li>
+<<<<<<< HEAD
                                                 <li><a href="{{ route('ajouter',['id'=>$produit->id]) }}"><i class="fa fa-shopping-cart"></i></a></li>
+=======
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+>>>>>>> dev
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
                                             <span>{{ $produit->categorie->nom }}</span>
+<<<<<<< HEAD
                                             <h5><a href="{{route('produitDetails',['id'=>$produit->id]) }}">{{ $produit->nom }}</a></h5>
+=======
+                                            <h5><a href="#">{{ $produit->nom }}</a></h5>
+>>>>>>> dev
                                             <div class="product__item__price">{{number_format(($produit->prix) - (($produit->prix)*10)/100,2) }} Ar<span>{{ $produit->prix }} </span></div>
                                         </div>
                                     </div>
@@ -67,6 +84,30 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <div class="filter__sort">
+                                    <span>Sort By</span>
+                                    <select>
+                                        <option value="0">Default</option>
+                                        <option value="0">Default</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-3">
+                                <div class="filter__option">
+                                    <span class="icon_grid-2x2"></span>
+                                    <span class="icon_ul"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+>>>>>>> dev
                     
                 </div>
             </div>
@@ -78,7 +119,11 @@
                             <ul class="product__item__pic__hover">
                                 <li><a href="{{route('produitDetails',['id'=>$produit->id]) }}"><i class="fa fa-info-circle"></i></a></li>
                                 
+<<<<<<< HEAD
                                 <li><a href="{{ route('ajouter',['id'=>$produit->id]) }}"><i class="fa fa-shopping-cart"></i></a></li>
+=======
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+>>>>>>> dev
                             </ul>
                         </div>
                         

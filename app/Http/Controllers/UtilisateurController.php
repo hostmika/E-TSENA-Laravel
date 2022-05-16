@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Illuminate\Support\Facades\Session;
+=======
+>>>>>>> 2057928 (mise en place du prix total dans panier)
+>>>>>>> dev
 
 class UtilisateurController extends Controller
 {

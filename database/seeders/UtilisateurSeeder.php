@@ -15,10 +15,23 @@ class UtilisateurSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         $utilisateur  = new User();
         $utilisateur->name = "RAKOTONDRAIBE Michael";
         $utilisateur->email = "michael@gmail.com";
         $utilisateur->password = Hash::make('michael123');
+=======
+        /*$utilisateur  = new User();
+        $utilisateur->name = "RAKOTONDRAIBE Michael";
+        $utilisateur->email = "michael@gmail.com";
+        $utilisateur->password = Hash::make('michael123');
+        $utilisateur->save();*/
+
+        $utilisateur  = new User();
+        $utilisateur->name = "RAKOTO Mika";
+        $utilisateur->email = "mika@gmail.com";
+        $utilisateur->password = Hash::make('mika123');
+>>>>>>> dev
         $utilisateur->save();
     }
 }
