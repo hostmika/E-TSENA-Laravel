@@ -10,18 +10,26 @@ use Cart;
 class PanierController extends Controller
 {
 
-    /*public function allProduits(Request $request) {
-
-        $paniers = Panier::where(['users_id'=>$request->session()->get('utilisateur')['id']])->get();
-        
-        return view('pages.panier',compact('paniers'));
-    }*/
-
     public function allProduits() {
 
         if(session()->has('utilisateur')){
             $idUtilisateur = session()->get('utilisateur')['id'];
             $paniers = Cart::session($idUtilisateur )->getContent();
+
+            $condition = new \Darryldecode\Cart\CartCondition(array(
+                'name' => 'VAT 12.5%',
+                'type' => 'tax',
+                'target' => 'total', 
+                'value' => '12.5%',
+                'attributes' => array( 
+                    'description' => 'Value added tax',
+                    'more_data' => 'more data here'
+                )
+            ));
+
+            Cart::condition($condition);
+            //Cart::clearCartConditions();
+            //dd($condition);
             
             return view('pages.panier',compact('paniers'));
         }
@@ -32,41 +40,35 @@ class PanierController extends Controller
         
     }
 
-    /*public function ajouterPanier(Request $request) {
-     
-        $produit = Produit::find($request->id);
-        $panier = new Panier();
-        $panier->produits_id = $produit->id;
-        $panier->users_id = $request->session()->get('utilisateur')['id'];
-        $panier->nom = $produit->nom;
-        $panier->prix =$produit->prix;
-        $panier->quantite = $request->quantite;
-        $panier->image = $produit->image;
-        $panier->save();
-
-        return redirect(route('panier'));
-    }*/
 
     public function ajouterPanier(Request $request) {
      
-        $idUtilisateur = $request->session()->get('utilisateur')['id'];
-        $produit = Produit::find($request->id);
+        if(session()->has('utilisateur')){
 
-        Cart::session($idUtilisateur)->add([
-            'id' => $produit->id,
-            'name' => $produit->nom,
-            'price' => $produit->prix,
-            'quantity' => $request->quantite,
-            'attributes' => array(
-                'image' => $produit->image,
-            )
-        ]);
+            $idUtilisateur = session()->get('utilisateur')['id'];
+            $produit = Produit::find($request->id);
 
-        session()->flash('success', 'Product is Added to Cart Successfully !');
+            Cart::session($idUtilisateur)->add([
+                'id' => $produit->id,
+                'name' => $produit->nom,
+                'price' => $produit->prix,
+                'quantity' => $request->quantite,
+                'attributes' => array(
+                    'image' => $produit->image,
+                )
+            ]);
 
-        return redirect(route('panier'));
+            session()->flash('success', 'Product is Added to Cart Successfully !');
+
+            return redirect(route('panier'));
+        }
+        else{
+           return redirect(route('panier')); 
+        }
+
     }
 
+<<<<<<< HEAD
     /*public function modifierPanier(Request $request) {
 
         $panier = Panier::find($request->id);
@@ -74,6 +76,31 @@ class PanierController extends Controller
         $panier->save();
         return redirect(route('panier'));
     }*/
+=======
+    public function ajouter(Request $request) {
+     
+        if(session()->has('utilisateur')){
+            $idUtilisateur = session()->get('utilisateur')['id'];
+            $produit = Produit::find($request->id);
+
+            Cart::session($idUtilisateur)->add([
+                'id' => $produit->id,
+                'name' => $produit->nom,
+                'price' => $produit->prix,
+                'quantity' => 1,
+                'attributes' => array(
+                    'image' => $produit->image,
+                )
+            ]);
+
+            return redirect(route('panier'));
+        }
+        else{
+            return redirect(route('panier'));
+        }
+        
+    }
+>>>>>>> c5f7b8d (finalisation du site web)
 
     public function modifierPanier(Request $request) {
 
@@ -94,11 +121,6 @@ class PanierController extends Controller
         return redirect(route('panier'));
     }
 
-    /*public function supprimerPanier(Request $request) {
-
-        Panier::destroy($request->id);
-        return redirect(route('panier'));
-    }*/
 
     public function supprimerPanier(Request $request) {
 
@@ -119,4 +141,6 @@ class PanierController extends Controller
 
         return redirect(route('panier'));
     }
+
+   
 }

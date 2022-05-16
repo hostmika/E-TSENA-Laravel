@@ -15,7 +15,7 @@
                             <div class="form-group row">
                                 <label for="email_address" class="col-md-4 col-form-label text-md-right">Adresse e-mail</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="email" id="email_address" class="form-control" name="email-address" value="michael@gmail.com" required autofocus>
+                                    <input type="email" name="email" id="email_address" class="form-control" name="email-address" value="michael@gmail.com" required autofocus>
                                 </div>
                             </div>
 
@@ -31,7 +31,7 @@
                                 <button type="submit" class="btn btn-primary">
                                    Se connecter
                                 </button>
-                                <a href="#" class="btn btn-link">
+                                <a href="/inscription" class="btn btn-link">
                                     Vous n'avez pas de compte?
                                 </a>
                             </div>

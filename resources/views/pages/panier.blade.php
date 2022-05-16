@@ -92,9 +92,9 @@
                         <h5>Cart Total</h5>
                         <ul>
                             <li>Sous-total <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getSubTotal(),2) }} Ar</span></li>
-                            <li>Total <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span></li>
+                            <li>Total TTC<span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                        <a href="#" class="primary-btn">PAIEMENT</a>
                     </div>
                 </div>
             </div>
@@ -109,4 +109,5 @@
     </div>
     @endif
     <!-- Shoping Cart Section End -->
+    
 @endsection

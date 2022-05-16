@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',"App\Http\Controllers\HomeController@allProduits")->name('acceuil');
+Route::get('/',"App\Http\Controllers\HomeController@allProduits")->name('accueil');
 Route::get('/shop',"App\Http\Controllers\ShopController@allProduits")->name('shop');
 Route::get('panier',"App\Http\Controllers\PanierController@allProduits")->name('panier');
 Route::get('blog',"App\Http\Controllers\BlogController@allProduits")->name('blog');

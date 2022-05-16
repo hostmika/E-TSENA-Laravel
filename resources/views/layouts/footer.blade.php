@@ -18,8 +18,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
+<<<<<<< HEAD
                         <div class="footer__copyright__text"><p>
                          Miantsena Copyright &copy;<script>document.write(new Date().getFullYear());</script> by RAKOTONDRAIBE Michael 
+=======
+                        <div class="d-flex justify-content-center" ><p>
+                         E-TSENA Copyright &copy;<script>document.write(new Date().getFullYear());</script> by RAKOTONDRAIBE Michael 
+>>>>>>> c5f7b8d (finalisation du site web)
                           </p>
                         </div>
                     </div>

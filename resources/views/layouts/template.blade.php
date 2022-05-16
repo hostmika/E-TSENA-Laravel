@@ -40,7 +40,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
             </ul>
-            <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span>
+            <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getSubTotal(),2) }} Ar</span>
             </div>
         </div>
         @else
@@ -55,12 +55,7 @@
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
                 <img src="{{ asset('img/language.png') }}" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
+                <div>Malagasy</div>
             </div>
             @if(Session::has('utilisateur'))
             <div class="header__top__right__auth">
@@ -77,7 +72,7 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
+                <li class="@if(Route::is('accueil')) active @endif"><a href="/">Accueil</a></li>
                 <li class="@if(Route::is('shop')) active @endif"><a href="/shop">Shop</a></li>
                 <li class="@if(Route::is('panier')) active @endif"><a href="/panier">Panier</a></li>
                 <li class="@if(Route::is('blog')) active @endif"><a href="/blog">Blog</a></li>
@@ -149,7 +144,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
+                            <li class="@if(Route::is('accueil')) active @endif"><a href="/">accueil</a></li>
                             <li class="@if(Route::is('shop')) active @endif"><a href="/shop">Shop</a></li>
                             <li class="@if(Route::is('panier')) active @endif"><a href="/panier">Panier</a></li>
                             <li class="@if(Route::is('blog')) active @endif"><a href="/blog">Blog</a></li>
@@ -163,7 +158,7 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span></div>
+                        <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getSubTotal(),2) }} Ar</span></div>
                     </div>
                 </div>
                 @else
@@ -185,7 +180,7 @@
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero @if(! Route::is('acceuil')) hero-normal @endif">
+    <section class="hero @if(! Route::is('accueil')) hero-normal @endif">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
