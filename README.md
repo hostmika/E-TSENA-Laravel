@@ -1,8 +1,9 @@
 # LARAVEL E-COMMERCE APPLICATION 
 
 # Auteur
-Nom:RAKOTONDRAIBE Michael
+RAKOTONDRAIBE Michael
 
+# Description
 E-TSENA est une application de commerce avec Laravel 8 qui permette de faire ses courses en ligne et de profiter des produits extra-frais du jour. Gagnez du temps en évitant les embouteillages et la queue en caisse.
 
 Ceci est une application :
