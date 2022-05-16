@@ -33,21 +33,10 @@
                                 src="{{ asset('img/produit/'.$produit->image) }}" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-<<<<<<< HEAD
                             <img src="{{ asset('img/produit/details/thumb-1.jpg') }}" alt="">
                             <img src="{{ asset('img/produit/details/thumb-2.jpg') }}" alt="">
                             <img src="{{ asset('img/produit/details/thumb-3.jpg') }}" alt="">
                             <img src="{{ asset('img/produit/details/thumb-4.jpg') }}" alt="">
-=======
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="{{ asset('img/product/details/thumb-1.jpg') }}" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="{{ asset('img/product/details/thumb-2.jpg') }}" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="{{ asset('img/product/details/thumb-3.jpg') }}" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="{{ asset('img/product/details/thumb-4.jpg') }}" alt="">
->>>>>>> dev
                         </div>
                     </div>
                 </div>
@@ -73,11 +62,7 @@
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
                             <button type="submit" class="primary-btn">ACHETER</button>
-=======
-                            <button type="submit" class="primary-btn">ADD TO CARD</button>
->>>>>>> dev
                     
                         </form>
                         

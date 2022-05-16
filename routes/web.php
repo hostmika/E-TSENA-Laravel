@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
 Route::get('/',"App\Http\Controllers\HomeController@allProduits")->name('accueil');
-=======
-Route::get('/',"App\Http\Controllers\HomeController@allProduits")->name('acceuil');
->>>>>>> dev
 Route::get('/shop',"App\Http\Controllers\ShopController@allProduits")->name('shop');
 Route::get('panier',"App\Http\Controllers\PanierController@allProduits")->name('panier');
 Route::get('blog',"App\Http\Controllers\BlogController@allProduits")->name('blog');
@@ -27,13 +23,9 @@ Route::get('/blogDetails',"App\Http\Controllers\BlogDetailsController@allProduit
 Route::get('/categorie/{id}',"App\Http\Controllers\CategorieController@byCategorie")->name('categorie');
 Route::get('/recherche',"App\Http\Controllers\ProduitController@recherche")->name('recherche');
 Route::post('/panier/ajout/{id}',"App\Http\Controllers\PanierController@ajouterPanier")->name('ajouterPanier');
-<<<<<<< HEAD
-Route::get('/panier/supprimer/{id}',"App\Http\Controllers\PanierController@supprimerPanier")->name('supprimerPanier');
-=======
 Route::get('/panier/ajout/{id}',"App\Http\Controllers\PanierController@ajouter")->name('ajouter');
 Route::get('/panier/supprimer/{id}',"App\Http\Controllers\PanierController@supprimerPanier")->name('supprimerPanier');
 Route::get('/supprimerTout',"App\Http\Controllers\PanierController@supprimerTout")->name('supprimerTout');
->>>>>>> dev
 Route::post('/panier/modifier/{id}',"App\Http\Controllers\PanierController@modifierPanier")->name('modifierPanier');
 Route::get('/login',"App\Http\Controllers\UtilisateurController@login")->name('login');
 Route::get('/inscription',"App\Http\Controllers\UtilisateurController@inscription")->name('inscription');

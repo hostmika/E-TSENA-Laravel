@@ -1,10 +1,7 @@
 @extends('layouts.template')
 
-<<<<<<< HEAD
-=======
 @section('title','Inscription | '.config('app.name'))
 
->>>>>>> dev
 @section('content')
 
 
@@ -27,11 +24,7 @@
                             <div class="form-group row">
                                 <label for="adresse_email" class="col-md-4 col-form-label text-md-right">Adresse e-mail</label>
                                 <div class="col-md-6">
-<<<<<<< HEAD
                                     <input type="email" name="email" id="password" class="form-control" required>
-=======
-                                    <input type="text" name="email" id="password" class="form-control" required>
->>>>>>> dev
                                 </div>
                             </div>
 

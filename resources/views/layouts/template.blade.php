@@ -14,7 +14,6 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/login.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/elegant-icons.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}" type="text/css">
@@ -41,21 +40,13 @@
             <ul>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
             </ul>
-<<<<<<< HEAD
             <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getSubTotal(),2) }} Ar</span>
-=======
-            <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span>
->>>>>>> dev
             </div>
         </div>
         @else
         <div class="humberger__menu__cart">
             <ul>
-<<<<<<< HEAD
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
-=======
                 <li><a href="/panier"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
->>>>>>> dev
             </ul>
             <div class="header__cart__price">Total: <span>0 Ar</span>
             </div>
@@ -64,7 +55,6 @@
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
                 <img src="{{ asset('img/language.png') }}" alt="">
-<<<<<<< HEAD
                 <div>Malagasy</div>
             </div>
             @if(Session::has('utilisateur'))
@@ -74,40 +64,15 @@
             @else
             <div class="header__top__right__auth">
                 <a href="/login"><i class="fa fa-user"></i>Connexion</a>
-=======
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
->>>>>>> dev
-            </div>
-            @if(Session::has('utilisateur'))
-            <div class="header__top__right__auth">
-<<<<<<< HEAD
-                <a href="/inscription"><i class="fa fa-user"></i>Inscription</a>
-            </div>
-=======
-                <a href="/login"><i class="fa fa-user"></i>Deconnexion</a>
-            </div>
-            @else
-            <div class="header__top__right__auth">
-                <a href="/login"><i class="fa fa-user"></i>Connexion</a>
             </div>
             <div class="header__top__right__auth">
                 <a href="/inscription"><i class="fa fa-user"></i>Inscription</a>
             </div>
->>>>>>> dev
             @endif
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-<<<<<<< HEAD
                 <li class="@if(Route::is('accueil')) active @endif"><a href="/">Accueil</a></li>
-=======
-                <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
->>>>>>> dev
                 <li class="@if(Route::is('shop')) active @endif"><a href="/shop">Shop</a></li>
                 <li class="@if(Route::is('panier')) active @endif"><a href="/panier">Panier</a></li>
                 <li class="@if(Route::is('blog')) active @endif"><a href="/blog">Blog</a></li>
@@ -143,25 +108,12 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-<<<<<<< HEAD
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="{{ asset('img/language.png') }}" alt="">
-                                <div>Malagasy</div>  
-=======
                                 <a href="https://www.facebook.com/mika.tankim/"><i class="fa fa-facebook"></i></a>
                                 <a href="https://www.instagram.com/shelby.rk/"><i class="fa fa-instagram"></i></a>
                             </div>
                             <div class="header__top__right__language">
                                 <img src="{{ asset('img/language.png') }}" alt="">
-<<<<<<< HEAD
-                                <div>Michael</div>  
-=======
                                 <div>Malagasy</div>  
->>>>>>> 2057928 (mise en place du prix total dans panier)
->>>>>>> dev
                             </div>
                             @if(Session::has('utilisateur'))
                             <div class="header__top__right__auth">
@@ -184,21 +136,13 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-<<<<<<< HEAD
-                        <a href="./index.html"><img src="{{ asset('img/logo.png') }}" alt=""></a>
-=======
                         <a href="/"><img src="{{ asset('img/logo.png') }}" alt=""></a>
->>>>>>> dev
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-<<<<<<< HEAD
                             <li class="@if(Route::is('accueil')) active @endif"><a href="/">accueil</a></li>
-=======
-                            <li class="@if(Route::is('acceuil')) active @endif"><a href="/">Acceuil</a></li>
->>>>>>> dev
                             <li class="@if(Route::is('shop')) active @endif"><a href="/shop">Shop</a></li>
                             <li class="@if(Route::is('panier')) active @endif"><a href="/panier">Panier</a></li>
                             <li class="@if(Route::is('blog')) active @endif"><a href="/blog">Blog</a></li>
@@ -210,26 +154,16 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-<<<<<<< HEAD
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getSubTotal(),2) }} Ar</span></div>
-=======
                             <li><a href="/panier"><i class="fa fa-shopping-bag"></i> <span>{{ Cart::session(session()->get('utilisateur')['id'])->getTotalQuantity()}}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getTotal(),2) }} Ar</span></div>
->>>>>>> dev
+                        <div class="header__cart__price">Total: <span>{{ number_format(Cart::session(session()->get('utilisateur')['id'])->getSubTotal(),2) }} Ar</span></div>
                     </div>
                 </div>
                 @else
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-<<<<<<< HEAD
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
-=======
                             <li><a href="/panier"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
->>>>>>> dev
                         </ul>
                         <div class="header__cart__price">Total: <span>0 Ar</span></div>
                     </div>
@@ -244,11 +178,7 @@
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
-<<<<<<< HEAD
     <section class="hero @if(! Route::is('accueil')) hero-normal @endif">
-=======
-    <section class="hero @if(! Route::is('acceuil')) hero-normal @endif">
->>>>>>> dev
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">

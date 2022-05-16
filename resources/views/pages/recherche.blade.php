@@ -1,10 +1,7 @@
 @extends('layouts.template')
 
-<<<<<<< HEAD
-=======
 @section('title','Recherche | '.config('app.name'))
 
->>>>>>> dev
 @section('content')
 	<!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="{{ asset('img/breadcrumb.jpg') }}">
@@ -14,13 +11,8 @@
                     <div class="breadcrumb__text">
                         <h2>RESULTATS DE VOTRE RECHERCHE</h2>
                         <div class="breadcrumb__option">
-<<<<<<< HEAD
-                            <a href="./index.html">me-Tsena</a>
-                            <span>categorie</span>
-=======
                             <a href="/">{{ config('app.name') }}</a>
                             <span>recherche</span>
->>>>>>> dev
                         </div>
                     </div>
                 </div>
@@ -50,25 +42,10 @@
 
                     <div class="filter__item">
                         <div class="row">
-<<<<<<< HEAD
-                            <div class="col-lg-4 col-md-5">
-                                <div class="filter__sort">
-                                    <span>Sort By</span>
-                                    <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="filter__found">
-                                    <h6><span>{{ $nbProduits }}</span> Products found</h6>
-=======
                             
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
                                     <h6><span>{{ $nbProduits }}</span> Produits trouvés</h6>
->>>>>>> dev
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
@@ -90,12 +67,8 @@
                                     <div class="product__discount__item__pic set-bg"
                                         data-setbg="{{ asset('img/produit/'.$produit->image) }}">
                                         <ul class="product__item__pic__hover">
-<<<<<<< HEAD
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-=======
                                             <li><a href="{{route('produitDetails',['id'=>$produit->id]) }}"><i class="fa fa-info-circle"></i></a></li>
                                             
->>>>>>> dev
                                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>

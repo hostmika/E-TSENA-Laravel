@@ -15,32 +15,68 @@ class ProduitsSeeder extends Seeder
     public function run()
     {
         $produit = new Produit();
-        $produit->nom = "Yaourt iti";
+        $produit->nom = "Pomme";
         $produit->categories_id = 1;
-        $produit->prix =1000;
-        $produit->description = "Yaourt be creme";
-        $produit->poids = "50 mg";
-        $produit->image = "yaourt.jpg";
+        $produit->prix =4500;
+        $produit->description = "La pomme est un fruit comestible à pépins d’un goût sucré et acidulé. Elle se présente sous différentes formes de variétés, mais ici nous vous proposons la pomme verte.
+            Comme son nom l’indique, elle conserve sa couleur verte même arrivée à sa pleine maturité. Quand elle est fraîche sa chair est juteuse, acidulée, ferme et croquante.
+            Les pommes à Madagascar sont généralement cultivé de façon organique pour conserver son goût et ses vertus";
+        $produit->poids = "1 kg";
+        $produit->image = "pomme.png";
         $produit->save();
 
         $produit = new Produit();
-        $produit->nom = "Le Fruit";
+        $produit->nom = "Banane";
+        $produit->categories_id = 1;
+        $produit->prix =1800;
+        $produit->description = "Que ce soit pour les besoins des consommateurs internes, ou encore pour les besoins externes (par le biais de l’exportation), l’activité de la culture de banane est présente à Madagascar depuis 1960 en commençant dans la région de Tamatave. Aujourd’hui, elle est plus que développée et nourrit bien des familles";
+        $produit->poids = "1 kg";
+        $produit->image = "banane.png";
+        $produit->save();
+
+        $produit = new Produit();
+        $produit->nom = "Pastèque";
+        $produit->categories_id = 1;
+        $produit->prix =3300;
+        $produit->description = "Madagascar ou encore l’île verte est un pays riche, et parmi ses verdures les arbres fruitiers.
+La pastèque bien qu’elle ne soit pas originaire de l’île est très consommée par les Malgaches, et beaucoup se sont investis dans sa culture";
+        $produit->poids = "";
+        $produit->image = "pasteque.jpg";
+        $produit->save();
+
+
+        $produit = new Produit();
+        $produit->nom = "Pomme de terre";
         $produit->categories_id = 2;
         $produit->prix =2500;
-        $produit->description = "Un jus concentre";
-        $produit->poids = "250 mg";
-        $produit->image = "jus.jpg";
+        $produit->description = "La pomme de terre joue un rôle important dans l’alimentation malgache comme complément du riz lors de la période de soudure. C’est l’une des productions les plus porteuses économiquement pour les agriculteurs";
+        $produit->poids = "1 kg";
+        $produit->image = "pommeTerre.jpg";
         $produit->save();
 
         $produit = new Produit();
-        $produit->nom = "Cremerie";
+        $produit->nom = "Haricot vert";
+        $produit->categories_id = 2;
+        $produit->prix =4200;
+        $produit->description = "Dans l’alimentation malgache, le haricot occupe la quatrième place après le riz, le manioc et le maïs. A Madagascar, la culture du haricot est pratiquée essentiellement dans trois régions : les hautes terres, le sud ouest et le nord ouest de la grande île";
+        $produit->poids = "1 kg";
+        $produit->image = "haricot.jpg";
+        $produit->save();
+
+        $produit = new Produit();
+        $produit->nom = "Carotte";
+        $produit->categories_id = 2;
+        $produit->prix =2000;
+        $produit->description = "Disponible toute l’année. Plus la carotte est orangée, plus elle est tendre et sucrée. La peau doit être lisse, uniforme et sans tache. La partie externe est riche en vitamine et en sels minéraux. C’est un des légumes les plus riches en sucre, provitamine A et en carotène";
+        $produit->poids = "1 kg";
+        $produit->image = "carotte.jpg";
+        $produit->save();
+
+        
+
+        $produit = new Produit();
+        $produit->nom = "Yaourt Yoplait";
         $produit->categories_id = 3;
-<<<<<<< HEAD
-        $produit->prix =2500;
-        $produit->description = "Un jus concentre";
-        $produit->poids = "250 mg";
-        $produit->image = "jus.jpg";
-=======
         $produit->prix =2300;
         $produit->description = "Yoplait Nature sur Fruits, c'est toute la fraîcheur et l'onctuosité d'un yaourt nature sucré sur un savoureux lit de fruits";
         $produit->poids = "250 g";
@@ -64,7 +100,6 @@ Ingrédient incontournable, il entre dans la composition de plusieurs préparati
         $produit->description = "La Fleurs de chèvres est un fromage bio très crémeux et fondant qui offre des saveurs équilibrées et florales avec de légères notes de noisettes";
         $produit->poids = "350 g";
         $produit->image = "fromage.jpg";
->>>>>>> c5f7b8d (finalisation du site web)
         $produit->save();
 
         $produit = new Produit();
